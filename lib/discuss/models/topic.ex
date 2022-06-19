@@ -3,6 +3,8 @@ defmodule Discuss.Topic do
 
   schema "topics" do
     field :title, :string
+    belongs_to :user, Discuss.User
+
     timestamps()
   end
 
@@ -11,5 +13,4 @@ defmodule Discuss.Topic do
     |> cast(params, [:title])
     |> validate_required([:title])
   end
-
 end
